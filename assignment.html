@@ -1,0 +1,603 @@
+<!DOCTYPE html>
+
+<html>
+
+<head>
+
+<meta charset="utf-8" />
+<meta name="generator" content="pandoc" />
+<meta http-equiv="X-UA-Compatible" content="IE=EDGE" />
+
+
+
+
+<title>Assignment</title>
+
+<script src="site_libs/jquery-1.11.3/jquery.min.js"></script>
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<link href="site_libs/bootstrap-3.3.5/css/paper.min.css" rel="stylesheet" />
+<script src="site_libs/bootstrap-3.3.5/js/bootstrap.min.js"></script>
+<script src="site_libs/bootstrap-3.3.5/shim/html5shiv.min.js"></script>
+<script src="site_libs/bootstrap-3.3.5/shim/respond.min.js"></script>
+<script src="site_libs/jqueryui-1.11.4/jquery-ui.min.js"></script>
+<link href="site_libs/tocify-1.9.1/jquery.tocify.css" rel="stylesheet" />
+<script src="site_libs/tocify-1.9.1/jquery.tocify.js"></script>
+<script src="site_libs/navigation-1.1/tabsets.js"></script>
+<script src="site_libs/accessible-code-block-0.0.1/empty-anchor.js"></script>
+<link href="site_libs/font-awesome-5.1.0/css/all.css" rel="stylesheet" />
+<link href="site_libs/font-awesome-5.1.0/css/v4-shims.css" rel="stylesheet" />
+<script defer src="https://pro.fontawesome.com/releases/v5.0.13/js/all.js" integrity="sha384-d84LGg2pm9KhR4mCAs3N29GQ4OYNy+K+FBHX8WhimHpPm86c839++MDABegrZ3gn" crossorigin="anonymous"></script>
+
+<!-- clipboard.js -->
+<script src="https://cdnjs.cloudflare.com/ajax/libs/clipboard.js/2.0.4/clipboard.min.js" integrity="sha256-FiZwavyI2V6+EXO1U+xzLG3IKldpiTFf3153ea9zikQ=" crossorigin="anonymous"></script>
+
+<script src="assets/css/clipboard.js"></script>
+
+
+
+
+<style type="text/css">
+h1 {
+  font-size: 34px;
+}
+h1.title {
+  font-size: 38px;
+}
+h2 {
+  font-size: 30px;
+}
+h3 {
+  font-size: 24px;
+}
+h4 {
+  font-size: 18px;
+}
+h5 {
+  font-size: 16px;
+}
+h6 {
+  font-size: 12px;
+}
+.table th:not([align]) {
+  text-align: left;
+}
+</style>
+
+<link rel="stylesheet" href="assets/css/kbd.css" type="text/css" />
+<link rel="stylesheet" href="assets/css/style.css" type="text/css" />
+
+
+
+<style type = "text/css">
+.main-container {
+  max-width: 940px;
+  margin-left: auto;
+  margin-right: auto;
+}
+code {
+  color: inherit;
+  background-color: rgba(0, 0, 0, 0.04);
+}
+img {
+  max-width:100%;
+}
+.tabbed-pane {
+  padding-top: 12px;
+}
+.html-widget {
+  margin-bottom: 20px;
+}
+button.code-folding-btn:focus {
+  outline: none;
+}
+summary {
+  display: list-item;
+}
+</style>
+
+
+<style type="text/css">
+/* padding for bootstrap navbar */
+body {
+  padding-top: 64px;
+  padding-bottom: 40px;
+}
+/* offset scroll position for anchor links (for fixed navbar)  */
+.section h1 {
+  padding-top: 69px;
+  margin-top: -69px;
+}
+.section h2 {
+  padding-top: 69px;
+  margin-top: -69px;
+}
+.section h3 {
+  padding-top: 69px;
+  margin-top: -69px;
+}
+.section h4 {
+  padding-top: 69px;
+  margin-top: -69px;
+}
+.section h5 {
+  padding-top: 69px;
+  margin-top: -69px;
+}
+.section h6 {
+  padding-top: 69px;
+  margin-top: -69px;
+}
+.dropdown-submenu {
+  position: relative;
+}
+.dropdown-submenu>.dropdown-menu {
+  top: 0;
+  left: 100%;
+  margin-top: -6px;
+  margin-left: -1px;
+  border-radius: 0 6px 6px 6px;
+}
+.dropdown-submenu:hover>.dropdown-menu {
+  display: block;
+}
+.dropdown-submenu>a:after {
+  display: block;
+  content: " ";
+  float: right;
+  width: 0;
+  height: 0;
+  border-color: transparent;
+  border-style: solid;
+  border-width: 5px 0 5px 5px;
+  border-left-color: #cccccc;
+  margin-top: 5px;
+  margin-right: -10px;
+}
+.dropdown-submenu:hover>a:after {
+  border-left-color: #ffffff;
+}
+.dropdown-submenu.pull-left {
+  float: none;
+}
+.dropdown-submenu.pull-left>.dropdown-menu {
+  left: -100%;
+  margin-left: 10px;
+  border-radius: 6px 0 6px 6px;
+}
+</style>
+
+<script>
+// manage active state of menu based on current page
+$(document).ready(function () {
+  // active menu anchor
+  href = window.location.pathname
+  href = href.substr(href.lastIndexOf('/') + 1)
+  if (href === "")
+    href = "index.html";
+  var menuAnchor = $('a[href="' + href + '"]');
+
+  // mark it active
+  menuAnchor.parent().addClass('active');
+
+  // if it's got a parent navbar menu mark it active as well
+  menuAnchor.closest('li.dropdown').addClass('active');
+});
+</script>
+
+<!-- tabsets -->
+
+<style type="text/css">
+.tabset-dropdown > .nav-tabs {
+  display: inline-table;
+  max-height: 500px;
+  min-height: 44px;
+  overflow-y: auto;
+  background: white;
+  border: 1px solid #ddd;
+  border-radius: 4px;
+}
+
+.tabset-dropdown > .nav-tabs > li.active:before {
+  content: "";
+  font-family: 'Glyphicons Halflings';
+  display: inline-block;
+  padding: 10px;
+  border-right: 1px solid #ddd;
+}
+
+.tabset-dropdown > .nav-tabs.nav-tabs-open > li.active:before {
+  content: "&#xe258;";
+  border: none;
+}
+
+.tabset-dropdown > .nav-tabs.nav-tabs-open:before {
+  content: "";
+  font-family: 'Glyphicons Halflings';
+  display: inline-block;
+  padding: 10px;
+  border-right: 1px solid #ddd;
+}
+
+.tabset-dropdown > .nav-tabs > li.active {
+  display: block;
+}
+
+.tabset-dropdown > .nav-tabs > li > a,
+.tabset-dropdown > .nav-tabs > li > a:focus,
+.tabset-dropdown > .nav-tabs > li > a:hover {
+  border: none;
+  display: inline-block;
+  border-radius: 4px;
+  background-color: transparent;
+}
+
+.tabset-dropdown > .nav-tabs.nav-tabs-open > li {
+  display: block;
+  float: none;
+}
+
+.tabset-dropdown > .nav-tabs > li {
+  display: none;
+}
+</style>
+
+<!-- code folding -->
+
+
+
+<style type="text/css">
+
+#TOC {
+  margin: 25px 0px 20px 0px;
+}
+@media (max-width: 768px) {
+#TOC {
+  position: relative;
+  width: 100%;
+}
+}
+
+@media print {
+.toc-content {
+  /* see https://github.com/w3c/csswg-drafts/issues/4434 */
+  float: right;
+}
+}
+
+.toc-content {
+  padding-left: 30px;
+  padding-right: 40px;
+}
+
+div.main-container {
+  max-width: 1200px;
+}
+
+div.tocify {
+  width: 20%;
+  max-width: 260px;
+  max-height: 85%;
+}
+
+@media (min-width: 768px) and (max-width: 991px) {
+  div.tocify {
+    width: 25%;
+  }
+}
+
+@media (max-width: 767px) {
+  div.tocify {
+    width: 100%;
+    max-width: none;
+  }
+}
+
+.tocify ul, .tocify li {
+  line-height: 20px;
+}
+
+.tocify-subheader .tocify-item {
+  font-size: 0.90em;
+}
+
+.tocify .list-group-item {
+  border-radius: 0px;
+}
+
+
+</style>
+
+
+
+</head>
+
+<body>
+
+
+<div class="container-fluid main-container">
+
+
+<!-- setup 3col/9col grid for toc_float and main content  -->
+<div class="row-fluid">
+<div class="col-xs-12 col-sm-4 col-md-3">
+<div id="TOC" class="tocify">
+</div>
+</div>
+
+<div class="toc-content col-xs-12 col-sm-8 col-md-9">
+
+
+
+
+<div class="navbar navbar-default  navbar-fixed-top" role="navigation">
+  <div class="container">
+    <div class="navbar-header">
+      <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar">
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+      </button>
+      <a class="navbar-brand" href="index.html"><a href = "https://sydney.edu.au/"><img  id="logo" style="width: 130px; margin: 7px 0px" src="https://sydney.edu.au/etc/designs/corporate-commons/node_modules/corporate-frontend/dist/assets/img/USydLogo.svg"  /></></a>
+    </div>
+    <div id="navbar" class="navbar-collapse collapse">
+      <ul class="nav navbar-nav">
+        
+      </ul>
+      <ul class="nav navbar-nav navbar-right">
+        <li>
+  <a href="https://canvas.sydney.edu.au/courses/26417">Canvas</a>
+</li>
+<li>
+  <a href="index.html">
+    <span class="fa fa-home"></span>
+     
+    DATA2002
+  </a>
+</li>
+<li>
+  <a href="data2902.html">DATA2902</a>
+</li>
+<li>
+  <a href="community.html">
+    <span class="fa fa-users"></span>
+     
+    Community
+  </a>
+</li>
+<li>
+  <a href="tips.html">
+    <span class="fa fa-star"></span>
+     
+    Tips
+  </a>
+</li>
+      </ul>
+    </div><!--/.nav-collapse -->
+  </div><!--/.container -->
+</div><!--/.navbar -->
+
+<div class="fluid-row" id="header">
+
+
+
+<h1 class="title toc-ignore">Assignment</h1>
+
+</div>
+
+
+<div id="overview" class="section level1">
+<h1>Overview</h1>
+<p>Your assignment submission should be a <strong>HTML document</strong> that you have compiled using R Markdown. You don’t need to separately include the Rmd file (i.e. the code file) but you do need to use <a href="https://bookdown.org/yihui/rmarkdown/html-document.html#code-folding">code folding</a> so that we can inspect your code where required. Using code folding is also super handy to use as a check if your report is well written - your report should make sense and provide all the relevant information in the text when the code is hidden. Don’t rely on the reader to understand your code and any output needs to be explained in the text.</p>
+<p>It should be written in a report style as if you were analysing a data set for a client. Below we provide some questions as guidance for what your report should contain.</p>
+<ul>
+<li>Think about how your report might be structured (e.g. introduction, results, conclusion).</li>
+<li>Do your figures have captions?</li>
+<li>Are your figures legible? Are they too big?</li>
+<li>Are you using headings and sub-headings effectively in your report?</li>
+<li>Have you included sufficient and appropriate citations? This includes software, data, and other reference material.</li>
+<li>Is it well presented (e.g. no unnecessary warnings or messages showing up) is there sufficient text explaining what is being presented or are you relying too much on the reader being able to understand and interpret the code and R output.</li>
+</ul>
+<p>You can work on this in your computer lab in consultation with others but you will need to submit your own report. Your tutor can also provide feedback on your approach.</p>
+</div>
+<div id="required-questions" class="section level1">
+<h1>Required questions</h1>
+<p>The data set we will consider comes from the class survey. The raw data can be downloaded <a href="https://docs.google.com/spreadsheets/d/e/2PACX-1vTf8eDSN_2QbMTyVvO5bdYKZSEEF2bufDdYnLnL-TsR8LM-6x-xu1cxmDMohlbLrkMJn9DE7EG7pg5P/pub?gid=1724783278&amp;single=true&amp;output=csv">here</a>. The following questions need to be addressed in the report.</p>
+<ol style="list-style-type: decimal">
+<li>Is this a random sample of DATA2X02 students?</li>
+<li>What are the potential biases? Which variables are most likely to be subjected to this bias?</li>
+<li>Are there any questions that needed improvement to generate useful data?</li>
+<li>Does the number of COVID tests follow a Poisson distribution?</li>
+<li>Perform two other hypothesis tests. Give some rationale for why you selected these hypothesis tests and interpret the results. Be sure to mention any limitations in the data that may impact your findings. You’re welcome to use any tests we have covered in class up to and including material in weeks 4 and 5 (try to have some variety in your selected tests).</li>
+</ol>
+<p>Additional requirements for DATA2902 students will be posted to their <a href="data2902.html">resources page</a>.</p>
+<div id="is-there-evidence" class="section level3">
+<h3>Is there evidence?</h3>
+<p>Where possible the framework for hypothesis testing outlined in the lectures should be used. You should be explicit about which test you are performing. Most of the quantitative tests that are presented require some assumptions and these should be checked before a valid conclusion can be drawn.</p>
+<p>When performing a test, you should think about the assumptions and justify your chosen test statistic. Make sure to:</p>
+<ol style="list-style-type: lower-alpha">
+<li>State the null and alternative hypotheses.</li>
+<li>Use visulisations to comment on the data and/or assumptions.</li>
+<li>Perform a suitable test (including checking any relevant assumptions and, where appropriate, justify why you chose that test over others that test the same hypothesis).</li>
+<li>Report the test statistic and p-value.</li>
+<li>Draw your conclusion about the null hypothesis based on the p-value and interpret this in the context of the original question.</li>
+</ol>
+</div>
+</div>
+<div id="rubric" class="section level1">
+<h1>Rubric</h1>
+<p>Your report should spell out all the steps you took in the process of answering these question: data import, data processing steps, justify any subsetting of the data and show any exploratory graphics that aid the discussion. Output without discussion will not achieve as many marks as output with discussion. Marks will be given out of a possible 10 marks with the following rubric.</p>
+<div id="full-marks-10-marks" class="section level3">
+<h3>Full Marks (10 marks)</h3>
+<ul>
+<li>An exceptionally well written, concise yet comprehensive report with very good discussion of results and carefully curated plots and/or tables.</li>
+<li>No superfluous output.</li>
+<li>Demonstrates creativity and flare by incorporating concepts/ideas/code that are beyond what was delivered in lectures and labs.</li>
+<li>Representing complete or close to complete mastery of the material.</li>
+</ul>
+</div>
+<div id="hd-9-marks" class="section level3">
+<h3>HD (9 marks)</h3>
+<ul>
+<li>A very well written report with good discussion of results and carefully curated plots and/or tables.</li>
+<li>No superfluous output.</li>
+<li>Representing complete or close to complete mastery of the material.</li>
+</ul>
+</div>
+<div id="d-8-marks" class="section level3">
+<h3>D (8 marks)</h3>
+<ul>
+<li>A comprehensive report, though it may include some unnecessary output. The discussion of results could be improved.</li>
+<li>Representing excellence, but substantially less than complete mastery.</li>
+</ul>
+</div>
+<div id="cr-7-marks" class="section level3">
+<h3>CR (7 marks)</h3>
+<ul>
+<li>A credit worthy attempt. These reports might not have provided sufficient evidence (graphical and formal hypothesis tests) to answer the underlying questions. The discussion of results could be improved.</li>
+<li>Representing a creditable performance that goes beyond routine knowledge and understanding, but less than excellence.</li>
+</ul>
+</div>
+<div id="p-6-marks" class="section level3">
+<h3>P (6 marks)</h3>
+<ul>
+<li>A basic attempt at a report that insufficiently addresses all the questions.</li>
+<li>Representing at least routine knowledge and understanding over a spectrum of topics and important ideas and concepts in the course.</li>
+</ul>
+</div>
+<div id="f-4-marks" class="section level3">
+<h3>F+ (4 marks)</h3>
+<ul>
+<li>A limited attempt at a report (e.g. incomplete)</li>
+<li>When you don’t meet the learning outcomes to a satisfactory standard.</li>
+</ul>
+</div>
+<div id="f-2-mark" class="section level3">
+<h3>F (2 mark)</h3>
+<ul>
+<li>An unsatisfactory attempt or only an Rmd file submitted.</li>
+</ul>
+</div>
+<div id="z-0-marks" class="section level3">
+<h3>Z (0 marks)</h3>
+<ul>
+<li>Not a valid submission.</li>
+</ul>
+</div>
+</div>
+<div id="feedback" class="section level1">
+<h1>Feedback</h1>
+<p>When we ran a similar assessment task last year, this was the generic feedback we provided to all students:</p>
+<p>Specific comments:</p>
+<ol style="list-style-type: decimal">
+<li>Most people interpreted their p-values correctly.</li>
+<li>Structure of hypothesis testing was good.</li>
+<li>Most people clearly stated which hypothesis test was being performed each time.</li>
+<li>Be selective in which code output you show. For example, do you need to show the entire matrix of expected cell counts in the report?</li>
+<li>Be sure to write some text around whether the assumptions were satisfied (above and beyond just stating that what the assumptions are). For example, don’t rely on an output <code>TRUE</code> from the code and expect the reader to know what that means.</li>
+<li>Some people discretised continuous variables. When discretising continuous variables, you need to be clear about how the thresholds were determined. It’s also worth considering if your results robust to changes in those thresholds. Do you come to a different conclusion if you use slightly different cut-offs?</li>
+<li>What does Fisher’s test do in the case where the contingency table is larger than 2x2? If you don’t know (we didn’t cover it in lectures), best to avoid the test.</li>
+</ol>
+<p>Where people lost marks:</p>
+<ul>
+<li>Lost marks if they didn’t check the assumptions of the test, this was the most common mistake. Many students simply stated the assumptions without commenting on its validity.</li>
+<li>Lost a mark if they didn’t answer each of the questions (use heading to make it clear to the marker). A few submissions were penalised if they came up with trivial questions like “What was the most common favourite season” - it needs to be a proper hypothesis test, not just an observation.</li>
+<li>Lost a mark if they didn’t remove nonsensical values or otherwise didn’t clean the data before testing or didn’t talk about how the data was cleaned.</li>
+<li>Many submissions performed multiple tests (e.g. a t-test and a Wilcoxon test) for the same question. This is OK if the assumptions are borderline (i.e. almost normally distributed data) but if the assumptions are clearly violated there is no need to do the t-test, just go with the valid test.</li>
+<li>Related to the above: make sure you justify the choice of the test you use.</li>
+<li>Need to see introductions and conclusions as well as list of references (even if it’s just the R packages used). Software package references are just as important as citing articles, websites or books.</li>
+</ul>
+<p>General comments:</p>
+<ul>
+<li>It’s always a good idea to <strong>visualise your data</strong>. If you’re doing a hypothesis test, there is usually some sort of visualisation that can accompany the hypothesis test so we can see what we’re testing.</li>
+<li>Plots deserve to be treated with respect - nice labels, legend, etc. Not all plots need to be hypercoloured - there were some fine examples of rainbow bar charts, but it’s not really necessary to make each year group a different colour for example.</li>
+<li>Most statisticians have a visceral hatred of pie charts. <a href="https://www.richardhollins.com/blog/why-pie-charts-suck/" class="uri">https://www.richardhollins.com/blog/why-pie-charts-suck/</a></li>
+<li>If your factor (categorical) variables have a natural ordering, make sure this is maintained in the plot (e.g. Always, Often, Sometimes, Rarely, Never). If there’s no natural ordering, bar charts are best ordered by frequency.</li>
+<li>You can include maths using <span class="math inline">\(\LaTeX\)</span> if you <a href="https://www.latex-tutorial.com/tutorials/amsmath/">know how</a>.</li>
+<li>Be sure to use <code>message = FALSE</code> and <code>warning = FALSE</code> in chunk options to prevent spurious messages and warnings showing up in the body of your report.</li>
+<li>Your comments are just as important (if not more important) than your code. Interpreting your output for your audience is your primary job as a data scientist.</li>
+<li>Anyone should be able to read your report and understand what is going on. (Not just statisticians.)</li>
+<li>Presentation matters. Be sure to put some effort into defining your document structure with headings, subheadings, etc. It’s always nice to have an introduction or executive summary up front and a conclusion that outlines any limitations.</li>
+<li>Some people put a lot of text as comments in their code - in an R markdown document, your comments can be outside the code chunks and they will appear as nicely formatted text.</li>
+<li>RStudio has a spell check - use it!</li>
+<li>The <code>kable()</code> function from the <strong>knitr</strong> package can be used to make tables look way nicer than monospaced font output. Also the <a href="https://gt.rstudio.com/"><strong>gt</strong> package</a> makes some nice tables.</li>
+<li>The best submissions had clearly explored ways to do things that we haven’t necessarily covered in lectures and labs - this is the best way to learn: identify that you need to do something and google the problem. Learning to code independently is basically learning how to google search the right key words/phrases and doing lots of trial and error.</li>
+<li>Careful with the use of the word significantly in colloquial text. The word “significant” has special meaning in a statistics context and should only be used with reference to a hypothesis test. Alternative words you can use to highlight an observed difference in more general settings include markedly, considerably, conspicuously, strikingly, …</li>
+<li>Try not to hard code data e.g. don’t use something like <code>c(45,12,9)</code> to represent observed cell counts - one of the major advantages of having R markdown document is that it can auto update when the data set changed. The text can even be made to be adaptive, but at a minimum the models should be adaptive and then only the text needs to be updated each time the data set changes.</li>
+</ul>
+</div>
+
+
+
+</div>
+</div>
+
+</div>
+
+<script>
+
+// add bootstrap table styles to pandoc tables
+function bootstrapStylePandocTables() {
+  $('tr.header').parent('thead').parent('table').addClass('table table-condensed');
+}
+$(document).ready(function () {
+  bootstrapStylePandocTables();
+});
+
+
+</script>
+
+<!-- tabsets -->
+
+<script>
+$(document).ready(function () {
+  window.buildTabsets("TOC");
+});
+
+$(document).ready(function () {
+  $('.tabset-dropdown > .nav-tabs > li').click(function () {
+    $(this).parent().toggleClass('nav-tabs-open')
+  });
+});
+</script>
+
+<!-- code folding -->
+
+<script>
+$(document).ready(function ()  {
+
+    // move toc-ignore selectors from section div to header
+    $('div.section.toc-ignore')
+        .removeClass('toc-ignore')
+        .children('h1,h2,h3,h4,h5').addClass('toc-ignore');
+
+    // establish options
+    var options = {
+      selectors: "h1,h2,h3",
+      theme: "bootstrap3",
+      context: '.toc-content',
+      hashGenerator: function (text) {
+        return text.replace(/[.\\/?&!#<>]/g, '').replace(/\s/g, '_');
+      },
+      ignoreSelector: ".toc-ignore",
+      scrollTo: 0
+    };
+    options.showAndHide = true;
+    options.smoothScroll = true;
+
+    // tocify
+    var toc = $("#TOC").tocify(options).data("toc-tocify");
+});
+</script>
+
+<!-- dynamically load mathjax for compatibility with self-contained -->
+<script>
+  (function () {
+    var script = document.createElement("script");
+    script.type = "text/javascript";
+    script.src  = "https://mathjax.rstudio.com/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML";
+    document.getElementsByTagName("head")[0].appendChild(script);
+  })();
+</script>
+
+</body>
+</html>
